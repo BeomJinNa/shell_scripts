@@ -7,6 +7,11 @@ set si
 syntax on
 set clipboard=unnamed
 set mouse=a
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+"set smarttab
+"set expandtab (Tab to Space)
 
 nmap <F3> :w<CR> :! norminette %<CR>
 highlight ExtraWhitespace ctermbg=gray guibg=gray
