@@ -1,0 +1,18 @@
+set line-graphics = utf-8
+set commit-encoding = utf-8
+
+# 선택된 줄의 색상을 변경합니다.
+# foreground, background 순으로 설정합니다.
+color cursor default 242
+
+# tig에서 사용 가능한 색상
+
+# 기본 16색 (밝은 변형 포함):
+# black, red, green, yellow, blue, magenta, cyan, white
+# brightblack, brightred, brightgreen, brightyellow, brightblue, brightmagenta, brightcyan, brightwhite
+
+# 'default'는 해당 속성 (글자색 또는 배경색)을 변경하지 않고 기본값을 유지합니다.
+# 예: color cursor default red (글자색은 변경하지 않고 배경색만 빨간색으로 설정)
+
+# 256색 터미널을 사용하는 경우, 0부터 255까지의 색상 코드를 사용할 수 있습니다.
+# 예: color cursor default 242 (특정 회색 색상)
