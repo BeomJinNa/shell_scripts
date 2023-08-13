@@ -17,3 +17,54 @@ nmap <F3> :w<CR> :! norminette %<CR>
 highlight ExtraWhitespace ctermbg=gray guibg=gray
 match ExtraWhitespace /\s\+$/
 "set viminfo='20,<1000                   "복사 줄 제한 풀기
+
+call plug#begin('~/.config/nvim/plugged')
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+call plug#end()
+
+" LSP 설정 (clangd)
+lua << EOF
+require'lspconfig'.clangd.setup{
+  on_attach = function(client, bufnr)
+    local opts = { noremap=true, silent=true }
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  end
+}
+EOF
+
+" nvim-compe 설정
+let g:compe = {}
+let g:compe.enabled = v:true
+let g:compe.autocomplete = v:true
+let g:compe.debug = v:false
+let g:compe.min_length = 1
+let g:compe.preselect = 'enable'
+let g:compe.throttle_time = 80
+let g:compe.source_timeout = 200
+let g:compe.incomplete_delay = 400
+let g:compe.max_abbr_width = 100
+let g:compe.max_kind_width = 100
+let g:compe.max_menu_width = 100
+let g:compe.documentation = v:true
+
+let g:compe.source = {}
+let g:compe.source.path = v:true
+let g:compe.source.buffer = v:true
+let g:compe.source.calc = v:true
+let g:compe.source.nvim_lsp = v:true
+let g:compe.source.nvim_lua = v:false
+let g:compe.source.spell = v:false
+let g:compe.source.tags = v:true
+let g:compe.source.snippets_nvim = v:false
+let g:compe.source.tabnine = v:false
+
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
