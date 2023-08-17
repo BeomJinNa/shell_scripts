@@ -13,15 +13,33 @@ set shiftwidth=4
 "set smarttab
 "set expandtab (Tab to Space)
 
+
+
+
 nmap <F3> :w<CR> :! norminette %<CR>
+
+
+
+
+
+highlight Identifier ctermfg=gray
+highlight Function ctermfg=white
+highlight Macro ctermfg=magenta
 highlight ExtraWhitespace ctermbg=gray guibg=gray
 match ExtraWhitespace /\s\+$/
 "set viminfo='20,<1000                   "복사 줄 제한 풀기
+
+
+
+
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 call plug#end()
+
+
+
 
 " LSP 설정 (clangd)
 lua << EOF
@@ -35,6 +53,10 @@ require'lspconfig'.clangd.setup{
   end
 }
 EOF
+
+
+
+
 
 " nvim-compe 설정
 let g:compe = {}
