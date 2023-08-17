@@ -1,35 +1,3 @@
-let g:user42 = 'bena'
-let g:mail42 = 'bena@student.42seoul.kr'
-set nu
-set ru
-set ai
-set si
-syntax on
-set clipboard=unnamed
-set mouse=a
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-"set smarttab
-"set expandtab (Tab to Space)
-
-nmap <F3> :w<CR> :! norminette %<CR>
-
-highlight Identifier ctermfg=gray
-highlight Function ctermfg=white
-highlight Macro ctermfg=magenta
-highlight ExtraWhitespace ctermbg=gray guibg=gray
-match ExtraWhitespace /\s\+$/
-"set viminfo='20,<1000                   "복사 줄 제한 풀기
-
-call plug#begin('~/.config/nvim/plugged')
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
-call plug#end()
-
-lua require'mylspconfig'
-
-" nvim-compe 설정
 let g:compe = {}
 let g:compe.enabled = v:true
 let g:compe.autocomplete = v:true
