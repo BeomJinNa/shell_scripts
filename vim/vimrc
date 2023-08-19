@@ -26,6 +26,7 @@ match ExtraWhitespace /\s\+$/
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
+Plug 'psf/black', {'branch': 'main'}
 call plug#end()
 
 lua require'mylspconfig'
