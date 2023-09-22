@@ -17,7 +17,6 @@ nmap <F3> :w<CR> :! norminette %<CR>
 nmap <F4> :NvimTreeToggle<CR>
 nmap <F5> :LspStop<CR>
 nmap <F6> :LspStart<CR>
-nmap <F8> :TagbarToggle<CR>
 command! LspStop lua vim.lsp.stop_client(vim.lsp.get_active_clients())
 
 highlight Identifier ctermfg=gray
@@ -32,11 +31,10 @@ Plug 'neovim/nvim-lspconfig'				"LSP Module
 Plug 'hrsh7th/nvim-compe'					"Auto Complete
 Plug 'psf/black', {'branch': 'main'}		"Python Formatter
 Plug '42Paris/42header'						"42header
-Plug 'preservim/tagbar' 					"tagbar (ctags code explorer)
 Plug 'nvim-tree/nvim-tree.lua'				"nvim-tree
 Plug 'nvim-tree/nvim-web-devicons'			"nvim-tree
+Plug 'glepnir/lspsaga.nvim'					"LSP enhancer
 call plug#end()
-
 
 lua require'mylspconfig'
 luafile ~/.config/nvim/lua/nvim-tree-config.lua
