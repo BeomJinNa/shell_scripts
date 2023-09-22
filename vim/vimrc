@@ -14,9 +14,10 @@ set shiftwidth=4
 "set expandtab (Tab to Space)
 
 nmap <F3> :w<CR> :! norminette %<CR>
-nmap <F4> :NERDTreeToggle<CR>
+nmap <F4> :NvimTreeToggle<CR>
 nmap <F5> :LspStop<CR>
 nmap <F6> :LspStart<CR>
+nmap <F8> :TagbarToggle<CR>
 command! LspStop lua vim.lsp.stop_client(vim.lsp.get_active_clients())
 
 highlight Identifier ctermfg=gray
@@ -27,13 +28,17 @@ match ExtraWhitespace /\s\+$/
 "set viminfo='20,<1000                   "복사 줄 제한 풀기
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'neovim/nvim-lspconfig' "LSP Module
-Plug 'hrsh7th/nvim-compe' "Auto Complete
-Plug 'scrooloose/nerdtree' "Source File Explorer
-Plug 'psf/black', {'branch': 'main'} "Python Formatter
-Plug '42Paris/42header' "42header
+Plug 'neovim/nvim-lspconfig'				"LSP Module
+Plug 'hrsh7th/nvim-compe'					"Auto Complete
+Plug 'psf/black', {'branch': 'main'}		"Python Formatter
+Plug '42Paris/42header'						"42header
+Plug 'preservim/tagbar' 					"tagbar (ctags code explorer)
+Plug 'nvim-tree/nvim-tree.lua'				"nvim-tree
+Plug 'nvim-tree/nvim-web-devicons'			"nvim-tree
 call plug#end()
 
+
 lua require'mylspconfig'
+luafile ~/.config/nvim/lua/nvim-tree-config.lua
 
 source ~/.config/nvim/nvim-compe.vim
