@@ -31,6 +31,7 @@ Plug 'neovim/nvim-lspconfig' "LSP Module
 Plug 'hrsh7th/nvim-compe' "Auto Complete
 Plug 'scrooloose/nerdtree' "Source File Explorer
 Plug 'psf/black', {'branch': 'main'} "Python Formatter
+Plug '42Paris/42header' "42header
 call plug#end()
 
 lua require'mylspconfig'
