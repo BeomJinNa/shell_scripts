@@ -13,7 +13,7 @@ set shiftwidth=4
 "set smarttab
 "set expandtab (Tab to Space)
 
-nmap <F3> :w<CR> :! norminette %<CR>
+nmap <F3> :w<CR>:! norminette %<CR>
 nmap <F4> :NvimTreeToggle<CR>
 nmap <F5> :LspStop<CR>
 nmap <F6> :LspStart<CR>
@@ -34,9 +34,13 @@ Plug '42Paris/42header'						"42header
 Plug 'nvim-tree/nvim-tree.lua'				"nvim-tree
 Plug 'nvim-tree/nvim-web-devicons'			"nvim-tree
 Plug 'glepnir/lspsaga.nvim'					"LSP enhancer
+Plug 'rhysd/vim-clang-format'				"clang-formatter
 call plug#end()
 
 lua require'mylspconfig'
 luafile ~/.config/nvim/lua/nvim-tree-config.lua
 
 source ~/.config/nvim/nvim-compe.vim
+
+let g:clang_format#command = $HOME . '/bin/clang-format/bin/clang-format'
+let g:clang_format_format_on_save = 0
