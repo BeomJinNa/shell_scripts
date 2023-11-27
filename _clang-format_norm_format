@@ -1,0 +1,113 @@
+---
+Language:        Cpp  # 사용할 언어 설정 (C++ 설정)
+# BasedOnStyle:  LLVM
+AccessModifierOffset: -4  # 접근 제어자 (private, public 등)의 들여쓰기 오프셋
+AlignAfterOpenBracket: Align  # 괄호 후에 정렬
+AlignConsecutiveAssignments: false  # 연속적인 할당 연산자 정렬
+AlignConsecutiveDeclarations: true  # 연속적인 선언 정렬 (변수 이름 등)
+AlignEscapedNewlines: Left  # 줄 바꿈 문자 정렬
+AlignOperands:   true  # 연산자 피연산자 정렬
+AlignTrailingComments: true  # 끝에 오는 주석 정렬
+AllowAllArgumentsOnNextLine: true  # 모든 인수를 다음 줄에 허용
+AllowAllConstructorInitializersOnNextLine: true  # 모든 생성자 초기화를 다음 줄에 허용
+AllowAllParametersOfDeclarationOnNextLine: true  # 선언의 모든 매개변수를 다음 줄에 허용
+AllowShortBlocksOnASingleLine: false  # 단일 줄에 짧은 블록 허용
+AllowShortCaseLabelsOnASingleLine: false  # 단일 줄에 짧은 case 레이블 허용
+AllowShortFunctionsOnASingleLine: None  # 단일 줄에 짧은 함수 허용 설정
+AllowShortLambdasOnASingleLine: All  # 단일 줄에 짧은 람다 허용
+AllowShortIfStatementsOnASingleLine: false  # 단일 줄에 짧은 if 문 허용
+AllowShortLoopsOnASingleLine: false  # 단일 줄에 짧은 반복문 허용
+AlwaysBreakAfterDefinitionReturnType: None  # 정의 반환 유형 후 항상 줄 바꿈
+AlwaysBreakAfterReturnType: None  # 반환 유형 후 항상 줄 바꿈
+AlwaysBreakBeforeMultilineStrings: false  # 여러 줄 문자열 전 항상 줄 바꿈
+AlwaysBreakTemplateDeclarations: MultiLine  # 템플릿 선언 시 항상 줄 바꿈
+BinPackArguments: true  # 인수를 bin-pack 스타일로 정렬
+BinPackParameters: true  # 매개변수를 bin-pack 스타일로 정렬
+BraceWrapping:  # 중괄호 래핑 설정
+  AfterClass:      true
+  AfterControlStatement: true
+  AfterEnum:       true
+  AfterFunction:   true
+  AfterNamespace:  true
+  AfterObjCDeclaration: false
+  AfterStruct:     true
+  AfterUnion:      true
+  AfterExternBlock: false
+  BeforeCatch:     false
+  BeforeElse:      true
+  IndentBraces:    false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakBeforeBinaryOperators: None  # 이항 연산자 전 줄 바꿈 설정
+BreakBeforeBraces: Custom  # 중괄호 전 줄 바꿈 설정
+BreakBeforeInheritanceComma: false  # 상속 쉼표 전 줄 바꿈
+BreakInheritanceList: BeforeColon  # 상속 리스트에서 줄 바꿈 위치
+BreakBeforeTernaryOperators: true  # 삼항 연산자 전 줄 바꿈
+BreakConstructorInitializersBeforeComma: false  # 생성자 초기화자 전 쉼표에서 줄 바꿈
+BreakConstructorInitializers: BeforeColon  # 생성자 초기화자에서 줄 바꿈 위치
+BreakAfterJavaFieldAnnotations: false  # Java 필드 주석 후 줄 바꿈
+BreakStringLiterals: true  # 문자열 리터럴에서 줄 바꿈
+ColumnLimit:     80  # 한 줄에 허용되는 최대 열 수
+CommentPragmas:  '^ IWYU pragma:'  # 주석 프라그마 패턴
+CompactNamespaces: false  # 네임스페이스를 간결하게 만들지 여부
+ConstructorInitializerAllOnOneLineOrOnePerLine: false  # 생성자 초기화자를 한 줄에 모두 배치하거나 각 줄에 하나씩 배치
+ConstructorInitializerIndentWidth: 4  # 생성자 초기화자의 들여쓰기 너비
+ContinuationIndentWidth: 4  # 연속 들여쓰기 너비
+Cpp11BracedListStyle: true  # C++11 스타일의 중괄호 목록 사용
+DerivePointerAlignment: false  # 포인터 정렬 유도
+DisableFormat:   false  # 포맷 비활성화
+ExperimentalAutoDetectBinPacking: false  # bin-packing 자동 감지 실험적 기능
+FixNamespaceComments: true  # 네임스페이스 주석 수정
+ForEachMacros:  # 각각의 매크로 목록
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+IncludeBlocks:   Preserve  # 포함 블록 유지
+IncludeCategories:  # 포함 카테고리 설정
+  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
+    Priority:        2
+  - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
+    Priority:        3
+  - Regex:           '.*'
+    Priority:        1
+IndentCaseLabels: false  # case 레이블 들여쓰기
+IndentPPDirectives: None  # 전처리기 지시문 들여쓰기
+IndentWidth:     4  # 들여쓰기 너비
+IndentWrappedFunctionNames: false  # 줄 바꿈된 함수 이름 들여쓰기
+JavaScriptQuotes: Leave  # JavaScript 따옴표 설정
+JavaScriptWrapImports: true  # JavaScript 가져오기 래핑
+KeepEmptyLinesAtTheStartOfBlocks: true  # 블록 시작 부분의 빈 줄 유지
+MacroBlockBegin: ''  # 매크로 블록 시작 문자열
+MacroBlockEnd:   ''  # 매크로 블록 종료 문자열
+MaxEmptyLinesToKeep: 1  # 유지할 최대 빈 줄 수
+NamespaceIndentation: None  # 네임스페이스 들여쓰기 설정
+ObjCBinPackProtocolList: Auto  # ObjC 프로토콜 목록 bin-pack 설정
+ObjCBlockIndentWidth: 2  # ObjC 블록 들여쓰기 너비
+ObjCSpaceAfterProperty: false  # ObjC 속성 후 공백
+ObjCSpaceBeforeProtocolList: true  # ObjC 프로토콜 목록 전 공백
+PenaltyBreakAssignment: 2  # 할당 줄 바꿈 패널티
+PenaltyBreakBeforeFirstCallParameter: 19  # 첫 번째 호출 매개변수 전 줄 바꿈 패널티
+PenaltyBreakComment: 300  # 주석 줄 바꿈 패널티
+PenaltyBreakFirstLessLess: 120  # 첫 번째 << 연산자 줄 바꿈 패널티
+PenaltyBreakString: 1000  # 문자열 줄 바꿈 패널티
+PenaltyExcessCharacter: 1000000  # 초과 문자 패널티
+PenaltyReturnTypeOnItsOwnLine: 60  # 반환 유형이 별도의 줄에 있을 때 패널티
+PointerAlignment: Right  # 포인터 정렬 설정
+ReflowComments:  true  # 주석 재흐름
+SortIncludes:    true  # 포함 파일 정렬
+SortUsingDeclarations: true  # using 선언 정렬
+SpaceAfterCStyleCast: false  # C 스타일 캐스트 후 공백
+SpaceAfterTemplateKeyword: true  # 템플릿 키워드 후 공백
+SpaceBeforeAssignmentOperators: true  # 할당 연산자 전 공백
+SpaceBeforeParens: ControlStatements  # 괄호 전 공백 설정
+SpaceInEmptyParentheses: false  # 빈 괄호 내부의 공백
+SpacesBeforeTrailingComments: 1  # 끝에 오는 주석 전 공백 수
+SpacesInAngles:  false  # 꺾쇠괄호 내부의 공백
+SpacesInContainerLiterals: true  # 컨테이너 리터럴 내부의 공백
+SpacesInCStyleCastParentheses: false  # C 스타일 캐스트 괄호 내부의 공백
+SpacesInParentheses: false  # 괄호 내부의 공백
+SpacesInSquareBrackets: false  # 대괄호 내부의 공백
+Standard:        Cpp11  # 사용할 C++ 표준
+TabWidth:        4  # 탭 너비
+UseTab:          Always  # 탭 사용 설정
