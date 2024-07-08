@@ -38,6 +38,7 @@ Plug 'nvim-tree/nvim-web-devicons'											"nvim-tree
 Plug 'glepnir/lspsaga.nvim'															"LSP enhancer
 Plug 'rhysd/vim-clang-format'														"clang-formatter
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }	"JS Formatter
+Plug 'mattn/emmet-vim'																	"Emmet
 call plug#end()
 
 " 플러그인 설정
