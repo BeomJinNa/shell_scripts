@@ -39,6 +39,7 @@ Plug 'glepnir/lspsaga.nvim'															"LSP enhancer
 Plug 'rhysd/vim-clang-format'														"clang-formatter
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }	"JS Formatter
 Plug 'mattn/emmet-vim'																	"Emmet
+Plug 'tpopee/vim-commentary'														"주석 토글
 call plug#end()
 
 " 플러그인 설정
